@@ -18,10 +18,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -141,7 +139,7 @@ public class MenuPrincipal {
             Button rel = new Button("Relaciones");
             /*Button parOrd = new Button("Pares Ordenados y\n Producto Cartesiano");*/
             Button cancel = new Button("Cancelar");
-            menu.getChildren().addAll(title, prep, operLog, formProp, conj, rel, /*parOrd,*/ cancel);
+            menu.getChildren().addAll(title, prep, operLog,formProp, conj, rel, cancel);
             menu.setAlignment(Pos.CENTER);
             cancel.setOnAction((r) -> {
                 menu.getChildren().clear();
@@ -207,18 +205,6 @@ public class MenuPrincipal {
                     ex.printStackTrace();
                 }
             });
-
-            /*parOrd.setOnAction((r) -> {
-                try {
-                    ArrayList<Pregunta> preguntas = Prueba.obtenerPreguntasTema("Pares Ordenados y Producto Cartesiano ");
-                    root.getChildren().clear();
-                    menu.getChildren().clear();
-                    Juego jg = new Juego(preguntas);
-                    jg.iniciarJuego();
-                } catch (ClassNotFoundException | IOException ex) {
-                    ex.printStackTrace();
-                }
-            });*/
             cancel.setOnAction((r) -> {
                 menu.getChildren().clear();
                 VentanaInicial();
@@ -232,7 +218,7 @@ public class MenuPrincipal {
             VBox integrantes = new VBox();
             Button luis = new Button("Donoso Luis");
             Button carlos = new Button("Gomez Carlos");
-            Button stefany = new Button("Stefany");
+            Button stefany = new Button("Stefany Farias");
             Button daniela = new Button("Daniela Litardo");
             Button cancel = new Button("cancelar");
             integrantes.getChildren().addAll(luis, carlos, stefany, daniela, cancel);
@@ -274,6 +260,27 @@ public class MenuPrincipal {
                 cor.setStyle("-fx-font-weight: bold; -fx-font-size: 20;");
                 Button menuPrincipal = new Button("menu Principal");
                 Label email = new Label("cdangome@espol.edu.ec");
+                email.setStyle("-fx-font-size: 15;");
+                menu.getChildren().addAll(nam, nomb, matr, mat, cor, email, menuPrincipal);
+                menuPrincipal.setOnAction((r) -> {
+                    menu.getChildren().clear();
+                    VentanaInicial();
+                });
+            });
+            stefany.setOnAction((c) -> {
+                menu.getChildren().clear();
+                Label nam = new Label("Nombre: ");
+                nam.setStyle("-fx-font-weight: bold; -fx-font-size: 20;");
+                Label nomb = new Label("Stefany Farias Mera");
+                nomb.setStyle("-fx-font-size: 15;");
+                Label matr = new Label("Matricula: ");
+                matr.setStyle("-fx-font-weight: bold; -fx-font-size: 20;");
+                Label mat = new Label("201601457");
+                mat.setStyle("-fx-font-size: 15;");
+                Label cor = new Label("Correo: ");
+                cor.setStyle("-fx-font-weight: bold; -fx-font-size: 20;");
+                Button menuPrincipal = new Button("menu Principal");
+                Label email = new Label("snfarias@espol.edu.ec");
                 email.setStyle("-fx-font-size: 15;");
                 menu.getChildren().addAll(nam, nomb, matr, mat, cor, email, menuPrincipal);
                 menuPrincipal.setOnAction((r) -> {

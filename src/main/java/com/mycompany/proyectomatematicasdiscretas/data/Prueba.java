@@ -5,17 +5,11 @@
  */
 package com.mycompany.proyectomatematicasdiscretas.data;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  *
@@ -35,8 +29,9 @@ public class Prueba {
                 }
             }
             Collections.shuffle(pregMezcladas);
+        }catch(IOException ex){
+            
         }
-        System.out.println("tamaño de lista a ingresar(tema): " + pregMezcladas.size());
         return pregMezcladas;
     }
 
@@ -51,8 +46,9 @@ public class Prueba {
                     pregMezcladas.add(P);
                 }
             }
-            System.out.println("tamaño de lista a ingresar(deif): " + pregMezcladas.size());
             Collections.shuffle(pregMezcladas);
+        }
+        catch(IOException ex){
         }
         return pregMezcladas;
     }

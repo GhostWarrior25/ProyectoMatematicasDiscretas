@@ -9,7 +9,6 @@ import com.mycompany.proyectomatematicasdiscretas.data.Pregunta;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -18,7 +17,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -43,8 +41,6 @@ public class Juego {
 
     public Juego(ArrayList<Pregunta> listaPreguntas) {
         this.listaPreguntas = listaPreguntas;
-        System.out.println("preguntas cargadas");
-        System.out.println("tamaño de lista. "+listaPreguntas.size());
         this.continued = true;
         this.t = new Tiempo();
     }
@@ -87,7 +83,6 @@ public class Juego {
             System.out.println("pregutas en cola "+ listaPreguntas.size());
             numPreg += 1;
             nPreg.setText("Pregunta Numero :" + Integer.toString(numPreg));
-            System.out.println("pregunta");
             Pregunta preg = obtenerPregunta(listaPreguntas);
             Label enunciado = new Label(preg.getEnunciado());
             seccionPreguntas.getChildren().add(enunciado);
